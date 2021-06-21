@@ -26,13 +26,30 @@
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" id="escrito">
                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-primary" id="hide">HIDE</button>
+                    <button type="button" class="btn btn-outline-danger" id="show">SHOW</button>
+                </div>
+
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    $("#hide").click(function() {
+        $("#escrito").hide();
+    });
+
+    $("#show").click(function() {
+        $("#escrito").show();
+    });
+</script>
