@@ -23,12 +23,16 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label for="campo1" class="form-label">Campo1</label>
+                    <input type="text" class="form-control" id="campo1" placeholder="Campo1">
                 </div>
-                <div class="mb-3" id="escrito">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="mb-3">
+                    <label for="campo2" class="form-label">Campo2</label>
+                    <input type="text" class="form-control" id="campo2" placeholder="Campo2">
+                </div>
+                <div class="mb-3">
+                    <label for="campo3" class="form-label">Campo3</label>
+                    <input type="text" class="form-control" id="campo3" placeholder="Campo3">
                 </div>
             </div>
             <div class="card-footer text-muted">
@@ -46,10 +50,10 @@
 
 <script>
     $("#hide").click(function() {
-        $("#escrito").hide();
+        $("#campo2").hide();
     });
 
     $("#show").click(function() {
-        $("#escrito").show();
+        $("#campo2").show();
     });
 </script>
