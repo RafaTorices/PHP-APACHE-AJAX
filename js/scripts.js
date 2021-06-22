@@ -70,6 +70,44 @@ function guardarForm() {
     } else {
         setInterval('location.reload()', 3000);
         $("#mensaje").empty();
-        $("#mensaje").append('<div class="alert alert-info" role="alert">Error en el registro, campos vacíos</div>');
+        $("#mensaje").append('<div class="alert alert-danger" role="alert">Error en el registro, campos vacíos</div>');
     }
+}
+
+// Función para borrar en MySQL con Ajax/Javascript
+function borrarRegistro(value) {
+    // Obtenemos el id del registro
+    id = value;
+    //Definimos una variable para almacenar un mensaje para el usuario
+    var mensaje;
+    //Avisamos al usuario que se estan guardando los datos
+    mensaje = "<div class='alert alert-info'>Guardando los datos, espere por favor...</div>";
+    document.getElementById("mensaje").innerHTML = mensaje;
+    // console.log("El id es: " + id);
+    //Hacemos la llamada a php para borrar los datos en la BD
+    $.ajax({
+        type: "POST",
+        url: "php/borrar.php",
+        //Pasamos el array con los datos a PHP
+        data: {
+            id: id,
+        },
+        dataType: "html",
+        //Mostramos el mensaje de resultado
+        success: function (data) {
+            setInterval('location.reload()', 3000);
+            $("#mensaje").empty();
+            $("#mensaje").append('<div class="alert alert-primary" role="alert">Borrando registro ID: <strong>' + id + '</strong></div>');
+            $("#card_forms").hide();
+            $("#card_resultados").show();
+        },
+        //Si hay error...
+        error: function (data) {
+            setInterval('location.reload()', 3000);
+            $("#mensaje").empty();
+            $("#mensaje").append('<div class="alert alert-danger" role="alert">Error en el registro, inténtelo de nuevo</div>');
+            $("#card_forms").hide();
+            $("#card_resultados").show();
+        }
+    });
 }
