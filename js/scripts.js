@@ -63,14 +63,14 @@ function guardarForm() {
             },
             error: function (data) {
                 $("#mensaje").empty();
-                $("#mensaje").append('<div class="alert alert-warning alert-dismissible fade show" role="alert" id="mensaje"><strong>Se ha producido un error, registro no guardado.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                $("#mensaje").append('<div class="alert alert-danger alert-dismissible fade show" role="alert" id="mensaje"><strong>Se ha producido un error.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
                 $("#card_forms").hide();
                 $("#card_resultados").show();
             }
         });
         //Si no guardamos...
     } else {
-        mensaje = "<div class='alert alert-warning'>No se guardaron los datos.</div>";
+        mensaje = '<div class="alert alert-info alert-dismissible fade show" role="alert" id="mensaje"><strong>Cancelado por el Usuario</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
         document.getElementById("mensaje").innerHTML = mensaje;
         $("#card_forms").hide();
         $("#card_resultados").show();
