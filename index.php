@@ -68,6 +68,14 @@
                     <label for="campo3" class="form-label">Campo3</label>
                     <input type="text" class="form-control" id="campo3" placeholder="Campo3">
                 </div>
+                <div class="mb-3">
+                    <label for="campo4" class="form-label">Campo4</label>
+                    <input type="text" class="form-control" id="campo4" placeholder="Campo4">
+                </div>
+                <div class="mb-3">
+                    <label for="campo5" class="form-label">Campo5</label>
+                    <input type="text" class="form-control" id="campo5" placeholder="Campo5">
+                </div>
             </div>
             <div class="card-footer text-muted">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -96,8 +104,7 @@
                             foreach($mysql_select as $resultado){
                                 echo '
                                 <tr>
-                                <td><i class="bi bi-trash" style="color:red; cursor:pointer;" data-bs-toggle="modal"
-                                        data-bs-target="#confirBorrar"></td>
+                                <td><i class="bi bi-trash" style="color:red; cursor:pointer;" onclick="borrarRegistro('.$resultado["id"].')"></td>
                                 <th scope="row">'.$resultado["id"].'</th>
                                 <td>'.$resultado["campo1"].'</td>
                                 <td>'.$resultado["campo2"].'</td>
@@ -126,23 +133,6 @@
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" onclick="guardarForm()"
                         data-bs-dismiss="modal">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal para la confirmacion de borrar -->
-    <div class="modal fade" id="confirBorrar" tabindex="-1" aria-labelledby="confirBorrarLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirBorrarLabel">Borrar registro?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="borrarRegistro(<?php $resultado['id'];?>)"
-                        data-bs-dismiss="modal">Borrar</button>
                 </div>
             </div>
         </div>
